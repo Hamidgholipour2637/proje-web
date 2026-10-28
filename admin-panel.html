@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل مدیریت</title>
+    <link rel="stylesheet" href="/admin.css">
+</head>
+
+<body class="panel-page">
+<main>
+    <div class="header">
+        <h1>پنل مدیریت</h1>
+
+        <div class="actions">
+            <button id="refresh-button" type="button">
+                تازه‌سازی پیام‌ها
+            </button>
+
+            <button id="logout-button" type="button">
+                خروج از پنل
+            </button>
+        </div>
+    </div>
+
+    <p id="status" role="status" aria-live="polite">
+        در حال بررسی ورود...
+    </p>
+
+    <!-- مدیریت پیام‌های دریافتی -->
+    <section aria-labelledby="messages-heading">
+        <h2 id="messages-heading">پیام‌های دریافتی</h2>
+        <div id="messages"></div>
+    </section>
+
+    <hr>
+
+    <!-- مدیریت پروژه‌ها -->
+    <section id="projects-section" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">مدیریت پروژه‌ها</h2>
+
+        <p id="projects-status" role="status" aria-live="polite">
+            پروژه‌ها هنوز بارگذاری نشده‌اند.
+        </p>
+
+        <button id="refresh-projects-button" type="button">
+            تازه‌سازی پروژه‌ها
+        </button>
+
+        <div id="projects-list"></div>
+
+        <hr>
+
+        <h3 id="project-form-heading">افزودن پروژه جدید</h3>
+
+        <form id="project-form">
+            <input type="hidden" id="project-id">
+
+            <div>
+                <label for="project-title">عنوان پروژه</label>
+                <input
+                    type="text"
+                    id="project-title"
+                    maxlength="200"
+                    required
+                >
+            </div>
+
+            <div>
+                <label for="project-description">توضیحات پروژه</label>
+                <textarea
+                    id="project-description"
+                    maxlength="10000"
+                    rows="5"
+                    required
+                ></textarea>
+            </div>
+
+            <div>
+                <label for="project-image-url">آدرس تصویر</label>
+                <input
+                    type="url"
+                    id="project-image-url"
+                    maxlength="500"
+                    placeholder="https://example.com/image.jpg"
+                >
+            </div>
+
+            <div>
+                <label for="project-url">آدرس پروژه</label>
+                <input
+                    type="url"
+                    id="project-url"
+                    maxlength="500"
+                    placeholder="https://example.com"
+                >
+            </div>
+
+            <div>
+                <label for="project-technologies">
+                    فناوری‌های استفاده‌شده
+                </label>
+                <textarea
+                    id="project-technologies"
+                    maxlength="2000"
+                    rows="3"
+                    placeholder="HTML, CSS, JavaScript"
+                ></textarea>
+            </div>
+
+            <div>
+                <label for="project-display-order">ترتیب نمایش</label>
+                <input
+                    type="number"
+                    id="project-display-order"
+                    min="0"
+                    max="100000"
+                    step="1"
+                    value="0"
+                    required
+                >
+            </div>
+
+            <div class="actions">
+                <button id="save-project-button" type="submit">
+                    افزودن پروژه
+                </button>
+
+                <button id="cancel-edit-button" type="button" hidden>
+                    لغو ویرایش
+                </button>
+            </div>
+        </form>
+    </section>
+	
+    <hr>
+
+    <!-- مدیریت مهارت‌ها -->
+    <section id="skills-section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">مدیریت مهارت‌ها</h2>
+
+        <p id="skills-status" role="status" aria-live="polite">
+            مهارت‌ها هنوز بارگذاری نشده‌اند.
+        </p>
+
+        <button id="refresh-skills-button" type="button">
+            تازه‌سازی مهارت‌ها
+        </button>
+
+        <div id="skills-list"></div>
+
+        <hr>
+
+        <h3 id="skill-form-heading">افزودن مهارت جدید</h3>
+
+        <form id="skill-form">
+            <input type="hidden" id="skill-id">
+
+            <div>
+                <label for="skill-title">نام مهارت</label>
+                <input
+                    type="text"
+                    id="skill-title"
+                    maxlength="100"
+                    required
+                >
+            </div>
+
+            <div>
+                <label for="skill-icon-url">آدرس آیکون</label>
+                <input
+                    type="text"
+                    id="skill-icon-url"
+                    maxlength="500"
+                    placeholder="portfolio-icons/brands/html5.svg"
+                >
+            </div>
+
+            <div>
+                <label for="skill-percentage">درصد مهارت</label>
+                <input
+                    type="number"
+                    id="skill-percentage"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value="80"
+                    required
+                >
+            </div>
+
+            <div>
+                <label for="skill-display-order">ترتیب نمایش</label>
+                <input
+                    type="number"
+                    id="skill-display-order"
+                    min="0"
+                    max="100000"
+                    step="1"
+                    value="0"
+                    required
+                >
+            </div>
+
+            <div class="actions">
+                <button id="save-skill-button" type="submit">
+                    افزودن مهارت
+                </button>
+
+                <button id="cancel-skill-edit-button"
+                    type="button" hidden>
+                    لغو ویرایش
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- مدیریت خدمات -->
+    <section id="services-section" aria-labelledby="services-heading">
+        <h2 id="services-heading">مدیریت خدمات</h2>
+
+        <p id="services-status" role="status" aria-live="polite">
+            خدمات هنوز بارگذاری نشده‌اند.
+        </p>
+
+        <button id="refresh-services-button" type="button">
+            تازه‌سازی خدمات
+        </button>
+
+        <div id="services-list"></div>
+
+        <hr>
+
+        <h3 id="service-form-heading">افزودن خدمت جدید</h3>
+
+        <form id="service-form">
+            <input type="hidden" id="service-id">
+
+            <div>
+                <label for="service-title">عنوان خدمت</label>
+                <input id="service-title" type="text"
+                       maxlength="200" required>
+            </div>
+
+            <div>
+                <label for="service-description">توضیحات</label>
+                <textarea id="service-description"
+                          maxlength="1000" rows="4" required></textarea>
+            </div>
+
+            <div>
+                <label for="service-icon">آدرس آیکون</label>
+                <input id="service-icon" type="text"
+                       maxlength="500" required
+                       placeholder="portfolio-icons/solid/desktop.svg">
+            </div>
+
+            <div>
+                <label for="service-link">لینک خدمت</label>
+                <input id="service-link" type="text"
+                       maxlength="500" required
+                       placeholder="services/web-design.html">
+            </div>
+
+            <div>
+                <label for="service-display-order">ترتیب نمایش</label>
+                <input id="service-display-order" type="number"
+                       min="0" max="100000" step="1"
+                       value="0" required>
+            </div>
+
+            <div>
+                <label>
+                    <input id="service-active" type="checkbox" hidden>
+                    نمایش خدمت در سایت
+                </label>
+            </div>
+
+            <div class="actions">
+                <button id="save-service-button" type="submit">
+                    افزودن خدمت
+                </button>
+
+                <button id="cancel-service-edit-button"
+                        type="button" hidden>
+                    لغو ویرایش
+                </button>
+            </div>
+        </form>
+    </section>
+
+	    <hr>
+
+</main>
+
+<script src="/admin-panel.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود مدیر</title>
+	<link rel="stylesheet" href="/admin.css">
+</head>
+
+<body class="login-page">
+    <main class="login-box">
+        <h1>ورود به پنل مدیریت</h1>
+
+        <form id="login-form">
+            <label for="password">رمز عبور مدیر</label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                autocomplete="current-password"
+                required
+            >
+
+            <button type="submit">ورود</button>
+
+            <p id="status" role="status" aria-live="polite"></p>
+        </form>
+    </main>
+
+    <script src="/admin-login.js" defer></script>
+</body>
+</html>

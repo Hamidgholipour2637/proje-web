@@ -1,0 +1,373 @@
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f3f4f6;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        .login-box {
+            width: min(90%, 400px);
+            padding: 32px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: 0;
+            border-radius: 8px;
+            background: #222;
+            color: #fff;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        #status {
+            margin-bottom: 0;
+            line-height: 1.8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 16px;
+            background: #f3f4f6;
+            font-family: Tahoma, Arial, sans-serif;
+            color: #222;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        button {
+            padding: 10px 16px;
+            border: 0;
+            border-radius: 8px;
+            background: #222;
+            color: white;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .message {
+            padding: 20px;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+            overflow-wrap: anywhere;
+            border-right: 5px solid #9e9e9e;
+        }
+
+        .message.unread {
+            border-right-color: #e69500;
+        }
+
+        .message.read {
+            border-right-color: #2e7d32;
+            background: #fbfffb;
+        }
+
+        .message p {
+            line-height: 1.9;
+            white-space: pre-wrap;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .badge.unread {
+            background: #fff0cf;
+            color: #805500;
+        }
+
+        .badge.read {
+            background: #dff4e2;
+            color: #21652a;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .read-button {
+            background: #2e7d32;
+        }
+
+        .delete-button {
+            background: #c62828;
+        }
+
+        #status {
+            line-height: 1.8;
+        }
+/* صفحه ورود مدیر */
+body.login-page {
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.login-page button {
+    width: 100%;
+    padding: 12px;
+}
+
+/* پنل پیام‌ها */
+body.panel-page {
+    display: block;
+    min-height: 100vh;
+    padding: 30px 16px;
+}
+
+body.panel-page button {
+    width: auto;
+    padding: 10px 16px;
+}
+
+/* بخش‌های پنل مدیریت */
+body.panel-page main {
+    width: 100%;
+}
+
+body.panel-page section {
+    margin-top: 24px;
+}
+
+body.panel-page h2 {
+    margin-bottom: 16px;
+    font-size: 21px;
+}
+
+body.panel-page h3 {
+    margin-top: 24px;
+    font-size: 18px;
+}
+
+body.panel-page hr {
+    margin: 32px 0;
+    border: 0;
+    border-top: 1px solid #dfe3e8;
+}
+
+/* فرم افزودن و ویرایش پروژه */
+#project-form {
+    max-width: 720px;
+    padding: 24px;
+    margin-top: 16px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+#project-form label {
+    display: block;
+    margin: 14px 0 8px;
+    font-weight: bold;
+}
+
+#project-form input,
+#project-form textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 0 0 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    color: #222;
+    font: inherit;
+}
+
+#project-form textarea {
+    resize: vertical;
+    line-height: 1.8;
+}
+
+#project-form input:focus,
+#project-form textarea:focus {
+    outline: 2px solid #64748b;
+    outline-offset: 1px;
+    border-color: #64748b;
+}
+
+#project-form button {
+    width: auto;
+}
+
+#cancel-edit-button {
+    background: #6b7280;
+}
+
+/* فهرست پروژه‌ها */
+#projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.project-card {
+    min-width: 0;
+    padding: 18px;
+    overflow-wrap: anywhere;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.project-card img {
+    display: block;
+    width: 100%;
+    max-height: 220px;
+    margin-bottom: 14px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    line-height: 1.7;
+}
+
+.project-card p {
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.project-card a {
+    overflow-wrap: anywhere;
+}
+
+.project-card button {
+    margin: 4px 0;
+}
+
+.project-card .edit-button {
+    background: #455a64;
+}
+
+.project-card .delete-button {
+    background: #c62828;
+}
+
+/* نمایش پیام‌های وضعیت */
+#projects-status,
+#status {
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+/* نمایش بهتر در موبایل */
+@media (max-width: 600px) {
+    body.panel-page {
+        padding: 20px 12px;
+    }
+
+    body.panel-page .header {
+        align-items: stretch;
+    }
+
+    body.panel-page .header h1 {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    body.panel-page .header .actions {
+        width: 100%;
+    }
+
+    body.panel-page .header .actions button {
+        flex: 1;
+    }
+
+    #project-form {
+        padding: 16px;
+    }
+
+    #projects-list {
+        grid-template-columns: 1fr;
+    }
+
+    #project-form .actions {
+        align-items: stretch;
+    }
+
+    #project-form .actions button {
+        flex: 1;
+    }
+}
