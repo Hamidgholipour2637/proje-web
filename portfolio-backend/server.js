@@ -104,7 +104,12 @@ app.get("/api/csrf-token", (req, res) => {
 
 // فایل‌های سایت
 app.use(express.static(path.join(__dirname, "..")));
-
+app.use((req, res, next) => {
+    if (req.path.startsWith("/portfolio_images/")) {
+        console.log("درخواست تصویر:", req.path);
+    }
+    next();
+});
 // بررسی فعال بودن API
 app.get("/api/test", (req, res) => {
     res.json({
