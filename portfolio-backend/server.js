@@ -13,7 +13,7 @@ const bcrypt = require("bcrypt");
 const pool = require("./db");
 const { csrfSync } = require("csrf-sync");
 const app = express();
-
+app.set("trust proxy", 1);
 const generalApiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 100,
