@@ -45,6 +45,12 @@ app.use(
         }
     })
 );
+// ارائه فایل‌های سایت قبل از نشست و دیتابیس
+app.use(express.static(path.join(__dirname, ".."), {
+    maxAge: "1d",
+    etag: true,
+    lastModified: true
+}));
 const PORT = process.env.PORT || 3000;
 
 // خواندن اطلاعات فرم‌ها
@@ -100,23 +106,6 @@ app.get("/api/csrf-token", (req, res) => {
         csrfToken: generateToken(req)
     });
 });
-// فایل‌های سایت
-app.use(express.static(path.join(__dirname, "..")));
-
-app.use((req, res, next) => {
-    if (req.path.startsWith("/portfolio_images/")) {
-        console.log("درخواست تصویر:", req.path);
-    }
-    next();
-});
-
-// بررسی وجود فایل لوگو
-const fs = require("fs");
-
-const logoPath = path.join(__dirname, "..", "portfolio_images", "logo.png");
-
-console.log("Logo exists:", fs.existsSync(logoPath));
-console.log("Logo path:", logoPath);
 
 // بررسی فعال بودن API
 app.get("/api/test", (req, res) => {
