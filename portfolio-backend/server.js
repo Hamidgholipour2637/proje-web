@@ -100,16 +100,24 @@ app.get("/api/csrf-token", (req, res) => {
         csrfToken: generateToken(req)
     });
 });
-
-
 // فایل‌های سایت
 app.use(express.static(path.join(__dirname, "..")));
+
 app.use((req, res, next) => {
     if (req.path.startsWith("/portfolio_images/")) {
         console.log("درخواست تصویر:", req.path);
     }
     next();
 });
+
+// بررسی وجود فایل لوگو
+const fs = require("fs");
+
+const logoPath = path.join(__dirname, "..", "portfolio_images", "logo.png");
+
+console.log("Logo exists:", fs.existsSync(logoPath));
+console.log("Logo path:", logoPath);
+
 // بررسی فعال بودن API
 app.get("/api/test", (req, res) => {
     res.json({
@@ -117,7 +125,6 @@ app.get("/api/test", (req, res) => {
         message: "API is working!"
     });
 });
-
 // بررسی اتصال دیتابیس
 if (process.env.NODE_ENV !== "production") {
     app.get("/api/db-test", async (req, res) => {
