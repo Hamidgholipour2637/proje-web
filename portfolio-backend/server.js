@@ -45,7 +45,7 @@ app.use(
         }
     })
 );
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // خواندن اطلاعات فرم‌ها
 app.use(express.urlencoded({
